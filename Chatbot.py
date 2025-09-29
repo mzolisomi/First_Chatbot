@@ -8,11 +8,14 @@ chatbot = ChatBot("SupportBot")
 trainer = ChatterBotCorpusTrainer(chatbot)
 trainer.train("./FAQ's.yml")
 
-# Chat loop
-print("Hi User")
-while True:
-    user_input = input("You: ")
-    if user_input.lower() == "quit":
-        break
-    response = chatbot.get_response(user_input)
-    print("Bot:", response)
+def get_bot_response(user_input):
+    return chatbot.get_response(user_input)
+
+# Chat loop (for local testing, can be removed in production)
+# print("Hi User")
+# while True:
+#     user_input = input("You: ")
+#     if user_input.lower() == "quit":
+#         break
+#     response = chatbot.get_response(user_input)
+#     print("Bot:", response)
